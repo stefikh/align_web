@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1> {% block title %}
+         Word alignment
+
+    {% endblock %}
+    </h1>
+    <div style=margin-left:600px> <h3> Пословное выравнивание  </h3> </div>
+    <br>
+{% endblock %}
+
+{% block text_description %}
+    <form class="container" action="/process_2" method="POST">
+        <h4>Enter the sentence. / Введите предложение.</h4>
+        <br>
+        <div class="form-row">
+            <div class="col">
+                <label>Afr</label>
+                <input type="text" class="form-control" id="validationServer01" placeholder="Africaans" name="Sentence_afr" required>
+            </div>
+            <div class="col">
+                <label>Trad</label>
+                <input type="text" class="form-control" id="validationServer02" placeholder="Other Language" name="Sentence_tr" required>
+            </div>
+        </div>
+        <br>
+        <div class="mx-auto" style="width: 200px;">
+            <div class="row">
+                <input class="submit" type="submit" name="submit" value="Save / Сохранить">
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+
+{% block foot %}
+    <h6><b>Контакты</b>: @steffi_haski (telegram), stefik_ah@rambler.ru (почта) <br>
+      Всегда открыта для вопросов, отзывов и предложений.</h6>
+{% endblock %}

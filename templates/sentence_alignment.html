@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1> {% block title %}
+         Sentence alignment
+    {% endblock %}
+    </h1>
+    <div style=margin-left:550px> <h3> Выравнивание по предложениям  </h3> </div>
+    <br>
+{% endblock %}
+
+{% block text_description %}
+    <form class="container" action="/process" method="POST" enctype="multipart/form-data">
+        <h4>If your text contains the following things, then you need to add tags to the text.</h4>
+        <h4>Если в вашем тексте есть следующие упоминания, то нужно Вам надо будет добавить метки в текст.</h4>
+        <br>
+        <h5>Author / Автор: %%%%%author. <br>
+            Ex.: Leigh Bardugo%%%%%author. <br><br>
+            Title / Название: %%%%%title. <br>
+            Ex.: Six of Crows%%%%%title.<br><br>
+            Quote / Цитата: %%%%%title. <br>
+            Ex.: Training For The Ballet, Potter?%%%%%qtext.<br><br>
+            Quote's author / Автор цитаты: %%%%%qname. <br>
+            Ex.: Draco Malfoy%%%%%qname.<br><br>
+            Image / Изображение: %%%%%image. <br>
+            Ex.: https://ya.ru/image.png%%%%%image.<br><br>
+            Part / Заголовок части: %%%%%h1. <br>
+            Ex.: Part 1%%%%%h1.<br><br>
+            Chapter / Заголовок главы: %%%%%h2. <br>
+            Ex.: Chapter 1%%%%%h2.<br><br>
+        </h5>
+        <br>
+        <h5>Do not rush, sometimes it takes a long time to process. You will see the result on the page 'uploaded_texts'.
+            <br>Не спешите, иногда на обработку надо много времени. Результат Вы увидите на вкладке 'uploaded_texts'.
+        </h5>
+
+
+        <br>
+        <div class="form-group">
+          <label>Language used in translated text / Язык используемый в переведённом тексте</label>
+          <select name="lang_to" class="custom-select mr-sm-2" id="validationServer07">
+            <option selected>...</option>
+            <option value="en">English /  Английский</option>
+            <option value="fra">French / Французский</option>
+            <option value="deu">German / Немецкий</option>
+            <option value="ita">Italian / Итальянский</option>
+            <option value="nld">Dutch / Нидерландский</option>
+            <option value="rus">Russian / Русский</option>
+          </select>
+        </div>
+        <br>
+        <h4>Upload files. / Загрузите файлы.</h4>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" name="file-in-africaans" id="customFile_or">
+            <label class="custom-file-label" for="customFile_or">File in Africaans</label>
+        </div>
+        <br>
+        <br>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" name="file-translated" id="customFile_tr">
+            <label class="custom-file-label" for="customFile_tr">File translated</label>
+        </div>
+        <br>
+        <br>
+        <div class="mx-auto" style="width: 200px;">
+            <div class="row">
+                <input class="submit" type="submit" name="submit" value="Save / Сохранить">
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block foot %}
+    <h6><b>Контакты</b>: @steffi_haski (telegram), stefik_ah@rambler.ru (почта) <br>
+      Всегда открыта для вопросов, отзывов и предложений.</h6>
+{% endblock %}

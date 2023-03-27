@@ -1,0 +1,27 @@
+body {
+  background: #F5F5F5;
+}
+h1 {
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+h4 {
+    color: black;
+    text-align: left;
+    padding: 5px;
+}
+h5 {
+    color: black;
+    text-align: left;
+    padding: 3px;
+    font-size: 13pt;
+    font-weight: 400;
+}
+h6 {
+    color: black;
+    text-align: center;
+    padding: 3px;
+    font-size: 10pt;
+    font-weight: 400;
+}

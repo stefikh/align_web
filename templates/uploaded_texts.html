@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h4>Here are all the texts that were uploaded and aligned on the site.</h4>
+    <h4>Здесь находятся все тексты, которые загружались и выравнивались на сайте.</h4>
+{% endblock %}
+
+{% block text_description %}
+    <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>File in africaans</th>
+        <th>File translated</th>
+        <th>Output html path</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for text in texts %}
+        <tr>
+          <td>{{ text.file_in_africaans_path.split("__")[1] }}</td>
+          <td>{{ text.file_translated_path.split("__")[1] }}</td>
+          <td > <a href="{{ text.output_html_path }}"> Result </a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
+{% block foot %}
+    <h6><b>Контакты</b>: @steffi_haski (telegram), stefik_ah@rambler.ru (почта) <br>
+      Всегда открыта для вопросов, отзывов и предложений.</h6>
+{% endblock %}
